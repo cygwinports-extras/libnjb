@@ -1,0 +1,25 @@
+NAME="libnjb"
+VERSION=2.2.7
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Nomad JukeBox device library"
+DESCRIPTION="libnjb is a C library and API for communicating with the
+Creative Nomad JukeBox and Dell DJ digital audio players under BSD, Linux,
+Mac OS X and Windows. The protocol these devices use is presumably called
+PDE (Portable Digital Entertainment protocol) at Creative."
+HOMEPAGE="http://libnjb.sourceforge.net/"
+SRC_URI="mirror://sourceforge/libnjb/libnjb-${VERSION}.tar.gz"
+PATCH_URI="2.2.7-cygwin.patch"
+
+PKG_NAMES="${NAME} ${NAME}5 ${NAME}-devel ${NAME}-doc"
+libnjb_CATEGORY="System"
+libnjb_SUMMARY=${SUMMARY/library/utilities}
+libnjb_CONTENTS="--exclude=html usr/bin/njb-* usr/share/"
+libnjb5_CONTENTS="usr/bin/cygnjb-5.dll"
+libnjb_devel_CONTENTS="usr/include/ usr/lib/"
+libnjb_doc_CATEGORY="Doc"
+libnjb_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+DISTCLEANFILES="libnjb.pc src/libnjb.h"
+
+MAKEOPTS+=" htmldocdir=\$(htmldir)"
