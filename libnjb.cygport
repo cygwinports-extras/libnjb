@@ -1,6 +1,6 @@
 NAME="libnjb"
 VERSION=2.2.7
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Nomad JukeBox device library"
 DESCRIPTION="libnjb is a C library and API for communicating with the
